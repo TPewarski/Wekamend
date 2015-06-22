@@ -1,0 +1,17 @@
+@relation movies 
+
+@attribute lead {0, 1} 
+@attribute genre {0, 1} 
+@attribute liked {0, 1} 
+
+@data 
+0, 0, 1 
+0, 0, 0 
+0, 1, 1 
+0, 0, 0 
+1, 1, 1 
+1, 0, 1 
+0, 1, 0 
+0, 0, 1 
+1, 1, 1 
+1, 0, 1 

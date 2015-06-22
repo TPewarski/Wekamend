@@ -1,0 +1,18 @@
+@relation movies
+
+@attribute title string
+@attribute lead {Gerard-Butler, Bill-Murray}
+@attribute genre {action, romcom}
+@attribute liked {no, yes}
+
+@data
+"300", Gerard-Butler, action, yes
+"Gamer", Gerard-Butler, action, no
+"P.S-I-Love-You", Gerard-Butler, romcom, yes
+"Law-Abiding-Citizen", Gerard-Butler, action, no
+"GroundHog-Day", Bill-Murray, romcom, yes
+"GhostBusters", Bill-Murray, action, yes
+"The-Ugly-Truth", Gerard-Butler, romcom, no
+"Olympus-Has-Fallen", Gerard-Butler, action, yes
+"Lost-In-Translation", Bill-Murray, romcom, yes
+"Space-Jam", Bill-Murray, action, yes

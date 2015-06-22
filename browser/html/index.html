@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rec Engine</title>
+	</head>
+	<body ng-app='recEngine' ng-controller="MainController">
+		<button type="button" ng-click="sendData()">Send Data</button>
+		<div class="recommendations" ng-show="showRecommendations">
+			<h1>Based on your selections, we think you will enjoy the following movies as well!</h1>
+			<div ng-repeat="movie in recMovies">
+				{{ movie }}
+				<h2>{{ movie.title }}</h2>
+				<h4> Starring {{ movie.lead }}<h4>
+			</div>
+		</div>
+		<div class="movies" ng-show="!showRecommendations">
+			<div ng-repeat="movie in trainingMovies">
+				{{ movie }}
+				<h1>{{ movie.title }}</h1>
+				<h3> Starring {{ movie.lead }}<h3>
+				<div class="buttons">
+					<button type="button" ng-click="setLike()">Like!</button>
+					<button type="button" ng-click="setDislike()">Dislike</button>
+				</div>
+			</div>
+		</div>
+		<script src="js/angular.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/mainFactory.js"></script>
+		<script src="js/mainController.js"></script>
+	</body>
+</html>
+
