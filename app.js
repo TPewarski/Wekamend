@@ -47,7 +47,7 @@ app.get('/movies', function(req, res){
 
 app.post('/movies', function(req, res){
 	var child;
-	// console.log(req.body)
+	console.log("req.body", req.body)
 	writeArff(req.body, function(){
 		// java -classpath weka.jar weka.classifiers.rules.ZeroR -t ../../../trainingData.arff -T ../../../testData.arff
 		child = exec('java -classpath node_modules/node-weka/bin/weka.jar weka.classifiers.rules.OneR -t trainingData.arff -T testData.arff', function(err, stdout, stderr){
@@ -56,6 +56,7 @@ app.post('/movies', function(req, res){
 			var valReg = /->.*/g
 			model.attribute = stdout.match(column)[0]
 			var values = stdout.match(valReg)
+			console.log("values", values)
 			model.val1 = values[0].match(/^\d+|\d+\b|\d+(?=\w)/g)
 			model.val2 = values[1].match(/^\d+|\d+\b|\d+(?=\w)/g)
 			console.log("model", model)
@@ -84,7 +85,7 @@ function writeArff(obj, callback){
 	"@attribute liked {0, 1} \n\n"+
 	"@data \n"
 
-	obj.data.forEach(function(item){
+	obj.forEach(function(item){
 		file += item.lead +", "+ item.genre +", "+ item.liked + " \n" 
 	})
 	// console.log("file", file)

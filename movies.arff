@@ -6,13 +6,13 @@
 @attribute liked {no, yes}
 
 @data
-"300", Gerard-Butler, action, yes
+"300", Gerard-Butler, action, no
 "Gamer", Gerard-Butler, action, no
-"P.S-I-Love-You", Gerard-Butler, romcom, yes
+"P.S-I-Love-You", Gerard-Butler, romcom, no
 "Law-Abiding-Citizen", Gerard-Butler, action, no
-"GroundHog-Day", Bill-Murray, romcom, yes
-"GhostBusters", Bill-Murray, action, yes
+"GroundHog-Day", Bill-Murray, romcom, no
+"GhostBusters", Bill-Murray, action, no
 "The-Ugly-Truth", Gerard-Butler, romcom, no
-"Olympus-Has-Fallen", Gerard-Butler, action, yes
-"Lost-In-Translation", Bill-Murray, romcom, yes
-"Space-Jam", Bill-Murray, action, yes
+"Olympus-Has-Fallen", Gerard-Butler, action, no
+"Lost-In-Translation", Bill-Murray, romcom, no
+"Space-Jam", Bill-Murray, action, no

@@ -4,7 +4,6 @@
 		<title>Rec Engine</title>
 	</head>
 	<body ng-app='recEngine' ng-controller="MainController">
-		<button type="button" ng-click="sendData()">Send Data</button>
 		<div class="recommendations" ng-show="showRecommendations">
 			<h1>Based on your selections, we think you will enjoy the following movies as well!</h1>
 			<div ng-repeat="movie in recMovies">
@@ -14,10 +13,12 @@
 			</div>
 		</div>
 		<div class="movies" ng-show="!showRecommendations">
+			<h1>What do you think of these movies??</h1>
+			<button type="button" ng-click="sendData()">Send Data</button>
 			<div ng-repeat="movie in trainingMovies">
-				{{ movie }}
-				<h1>{{ movie.title }}</h1>
-				<h3> Starring {{ movie.lead }}<h3>
+				<!-- {{ movie }} -->
+				<h2>{{ movie.title }}</h2>
+				<h4> Starring {{ movie.lead }}<h4>
 				<div class="buttons">
 					<button type="button" ng-click="setLike()">Like!</button>
 					<button type="button" ng-click="setDislike()">Dislike</button>
