@@ -16,7 +16,7 @@ app.controller('MainController', function($scope, MainFactory){
 		// console.log("controller preMovies post REC", $scope.preMovies)
 
 		$scope.arffJson = movies.data
-		console.log("arff.json", $scope.arffJson)
+		// console.log("arff.json", $scope.arffJson)
 		// console.log("controller data", movies)
 	})
 
@@ -43,31 +43,39 @@ app.controller('MainController', function($scope, MainFactory){
 			var key = response.attribute
 			var zeroVal = parseInt(response.val1[0])
 			var oneVal = parseInt(response.val2[0])
-			console.log("zeroVal", zeroVal)
-			console.log("oneVal", oneVal)
-			console.log("key", key)
-			$scope.recMovies.forEach(function(item){
+			// console.log("zeroVal", zeroVal)
+			// console.log("oneVal", oneVal)
+			// console.log("key", key)
+			var prefFilter = function(item){
+				if(item[key] == 0 && zeroVal == 1) return true
+				else if(item[key] == 1 && oneVal == 1) return true
+				else return false	
+			}
+			// $scope.recMovies.forEach(function(item){
 				
-				// console.log("item[key]", item[key])
-				if(item[key] == 0) {
-					item.liked = zeroVal
-					console.log("liked")
-				}
-				else {
-					item.liked = oneVal
-					console.log("disliked")
-				} 
-				// console.log("item", item)
+			// 	// console.log("item[key]", item[key])
+			// 	if(item[key] == 0) {
+			// 		item.liked = zeroVal
+			// 		console.log("liked")
+			// 	}
+			// 	else {
+			// 		item.liked = oneVal
+			// 		console.log("disliked")
+			// 	} 
+			// 	// console.log("item", item)
+			// })
+		// function(item){
+		// 		if(item.liked == 1)return true
+		// 		return false
+		// 	}
+			$scope.recMovies = $scope.recMovies.filter(function(item){
+				return prefFilter(item)
 			})
 			$scope.preMovies.forEach(function(movie){
 				//console.log("movie", movie)
 				if(movie.lead == 0) movie.lead = "Gerard Butler"
 				else movie.lead = "Bill Murray"
 
-			})
-			$scope.recMovies = $scope.recMovies.filter(function(item){
-				if(item.liked == 1)return true
-				return false
 			})
 		})
 	}

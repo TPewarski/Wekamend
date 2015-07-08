@@ -56,13 +56,13 @@ app.post('/movies', function(req, res){
 			var valReg = /->.*/g
 			model.attribute = stdout.match(column)[0]
 			var values = stdout.match(valReg)
-			console.log("values", values)
+			// console.log("values", values)
 			model.val1 = values[0].match(/^\d+|\d+\b|\d+(?=\w)/g)
 			model.val2 = values[1].match(/^\d+|\d+\b|\d+(?=\w)/g)
 			console.log("model", model)
 
 			// console.log("model.attribute", model.attribute)
-			// console.log("stdout", stdout)
+			console.log("stdout", stdout)
 			// console.log("stdout type of", typeof(stdout))
 			// console.log("stderr", stderr)
 			// console.log("err", err)

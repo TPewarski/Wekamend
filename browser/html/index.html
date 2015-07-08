@@ -2,19 +2,20 @@
 <html>
 	<head>
 		<title>Rec Engine</title>
+		<link rel="stylesheet" type="text/css" href="js/style.css" />
 	</head>
 	<body ng-app='recEngine' ng-controller="MainController">
 		<div class="recommendations" ng-show="showRecommendations">
 			<h1>Based on your selections, we think you will enjoy the following movies as well!</h1>
 			<div ng-repeat="movie in recMovies">
-				{{ movie }}
+			<!-- 	{{ movie }} -->
 				<h2>{{ movie.title }}</h2>
 				<h4> Starring {{ movie.lead }}<h4>
 			</div>
 		</div>
 		<div class="movies" ng-show="!showRecommendations">
 			<h1>What do you think of these movies??</h1>
-			<button type="button" ng-click="sendData()">Send Data</button>
+			<button type="button" ng-click="sendData()">Wekamend me a Movie!!</button>
 			<div ng-repeat="movie in trainingMovies">
 				<!-- {{ movie }} -->
 				<h2>{{ movie.title }}</h2>
